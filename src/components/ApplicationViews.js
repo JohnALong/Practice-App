@@ -19,12 +19,10 @@ class ApplicationViews extends Component {
         }} />
 
         <Route exact path="/practices" render={(props) => {
-          console.log("list route", props, this.props)
           return <PracticeList {...props} {...this.props} />
         }} />
 
         <Route path="/practices/:practiceId(\d+)" render={(props) => {
-          console.log("route view", props.match)
           return <PracticeDetail practiceId={parseInt(props.match.params.practiceId)} {...props} />
         }} />
       </React.Fragment>

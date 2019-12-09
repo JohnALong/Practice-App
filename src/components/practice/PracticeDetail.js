@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import APIManager from '../../modules/APIManager';
 
-// variable to store images path
-const imagePath = `../cue_images`
 class PracticeDetail extends Component {
 
     state = {
-        image: "",
+        image: "default_cues.jpg",
         builderName: "",
         styleName: ""
     }
@@ -29,7 +27,7 @@ class PracticeDetail extends Component {
         return (
             <div className="card">
                 <div className="card-content">
-                    <img src={require(`${imagePath}/${this.state.image}`)} alt="a cue" />
+                <img src={require(`../cue_images/${this.state.image}`)} alt="cue" />
                     <h3>Name: <span>{this.state.styleName}</span></h3>
                     <p>Breed: {this.state.builderName}</p>
                 </div>
