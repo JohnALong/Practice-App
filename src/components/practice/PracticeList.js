@@ -10,7 +10,7 @@ class PracticeList extends Component {
     }
 
     componentDidMount() {
-        console.log("Practice List: componentDidMount")
+        // console.log("Practice List: componentDidMount", this.props)
         APIManager.getAll()
             .then((practices) => {
                 this.setState({
@@ -20,12 +20,11 @@ class PracticeList extends Component {
     }
 
     render() {
-        console.log("Practice LIST: Render", this.state);
-
+        console.log("Practice LIST: Render", this.state, this.props);
         return (
             <div className="container-cards">
                 {this.state.practices.map(practice => <PracticeCard
-                    key={practice.id} practice={practice} />
+                    key={practice.id} practice={practice} image={practice.image} />
                 )}
             </div>
         )
